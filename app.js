@@ -21,9 +21,9 @@ web3.eth.getAccounts(function(err,accounts){
     console.log(accounts)
 })
 
-var account ='0x41323edE64486B9aFdc542a26FaB232F5815c595'
+var account ='0xd429036Aeb71814a44373532e5538A9A38981122'
 
-var pkey = "eff56bd3f30b02855af1d3365b36a98b2642634de5eb9ef1c652e81d3e508751"
+var pkey = "a9a53d332ba3a4847d2ab8d5fa5cd8e0630b54b53885d6c059efb98940c9f601"
  
 var abi = [
 	{
@@ -52,9 +52,9 @@ var abi = [
 		"stateMutability": "view",
 		"type": "function"
 	}
-] 
+]
 
-var contractAdress = '0x9aFd5E4402265e289aE7480DE2A83C8E31e3A80e'
+var contractAdress = '0xA9a03874FCE34E3a7814fF10801FFF99a1fb5DCC'
 
 var myContract = new web3.eth.Contract(abi,contractAdress)
 
