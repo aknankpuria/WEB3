@@ -69,20 +69,21 @@ app.get('/getString',function (req,res){
 })
 app.post( '/newword' , function(req,res){
     var newWord = req.body.word ;
-    var encodeddata = myContract.methods.set(newWord).encodeABI();
-    console.log ( encodeddata)
+    var encodedData = myContract.methods.set(newWord).encodeABI();
+    console.log(encodedData)
 
     var transactionObject ={
 
-        gas: '47000',
-        data: 'myContract',
+        gas: '470000',
+        data: encodedData,
         from: account,
         to  : contractAdress
     }
 
-    web3.eth.accounts.signTransaction(transactionObject,pkey,function(err , trans){
-        console.log(trans)
-        web3.sendSignedTransaction(trans.rawTransaction).on("receipt",function(result){
+    web3.eth.accounts.signTransaction(transactionObject,pkey,function(error, trans){
+        console.log(trans);
+        web3.eth.sendSignedTransaction(trans.rawTransaction).on("receipt",function(result){
+            console.log(result);
             res.send(result);
         })
     })
